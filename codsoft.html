@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Verification - CodSoft</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box; /* Avoid horizontal overflow */
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: #fff;
+      overflow-x: hidden; /* Horizontal scroll hatane ke liye */
+    }
+
+    /* Navbar / Logo */
+    .navbar {
+      width: 100%;
+      padding: 20px 30px;
+      text-align: left;
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: #2d2d6e;
+      line-height: 1.2;
+    }
+    .logo span {
+      color: #d32f2f;
+    }
+    .tagline {
+      font-size: 14px;
+      color: #d32f2f;
+      font-weight: 500;
+    }
+
+    /* Main container */
+    .container {
+      margin-top: 40px;
+      padding: 0 15px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .box {
+      display: inline-block;
+      background: #f8f9ff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+      max-width: 320px;
+      width: 100%;
+    }
+
+    input {
+      padding: 12px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 5px;
+      width: 100%;
+      padding: 12px 25px;
+      border: none;
+      background: black;
+      color: white;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    /* Certificate Result */
+    .result {
+      margin-top: 30px;
+      display: none;
+      text-align: left;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .result div {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .result div:nth-child(odd) {
+      background: #f9f9f9;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 60px;
+      font-size: 14px;
+      color: #555;
+    }
+    .footer a {
+      color: #2d2d6e;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">Cod<span>Soft</span></div>
+    <div class="tagline">Code.Create.Succeed</div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>CERTIFICATE VERIFICATION SYSTEM</h2>
+    
+    <div class="box">
+      <input type="text" id="code" placeholder="Enter Certificate Code">
+      <br>
+      <button onclick="verifyCertificate()">Search</button>
+    </div>
+
+    <!-- Certificate Result -->
+    <div class="result" id="resultBox"></div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    © 2025 • Built with <strong>CodSoft</strong>
+  </div>
+
+  <script>
+    function verifyCertificate() {
+      let code = document.getElementById("code").value.trim();
+      let resultBox = document.getElementById("resultBox");
+
+      // Default certificate data
+      const certificateData = `
+        <div><strong>Student Name:</strong> Rahul Prajapati</div>
+        <div><strong>Domain:</strong> Web Development Internship</div>
+        <div><strong>Duration:</strong> 4 weeks</div>
+        <div><strong>Certification No:</strong> 4rp3108</div>
+        <div><strong>Starting Date:</strong> 15/Jul/2025</div>
+        <div><strong>Award Date:</strong> 15/Aug/2025</div>
+      `;
+
+      // Reset box before showing
+      resultBox.style.display = "block";
+      resultBox.innerHTML = "";
+
+      if(code === "4rp3108"){  
+        resultBox.innerHTML = certificateData;
+      } else {
+        resultBox.innerHTML = "<div style='padding:15px; color:red; text-align:center;'>❌ Invalid Certificate Code</div>";
+      }
+    }
+  </script>
+
+</body>
+</html>
