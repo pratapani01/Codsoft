@@ -26,20 +26,16 @@
       padding: 20px 30px;
       text-align: left;
     }
-    .logo {
-      font-size: 26px;
-      font-weight: bold;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      color: #2d2d6e;
-      line-height: 1.2;
-    }
-    .logo span {
-      color: #d32f2f;
+    .logo img {
+      height: 50px; /* logo size */
+      width: auto;
+      display: block;
     }
     .tagline {
       font-size: 14px;
       color: #d32f2f;
       font-weight: 500;
+      margin-top: 5px;
     }
 
     /* Main container */
@@ -126,8 +122,10 @@
 
   <!-- Navbar -->
   <div class="navbar">
-    <div class="logo">Cod<span>Soft</span></div>
-    <div class="tagline">Code.Create.Succeed</div>
+    <div class="logo">
+      <img src="logo.avif" alt="CodSoft Logo">
+    </div>
+    <!-- <div class="tagline">Code.Create.Succeed</div> -->
   </div>
 
   <!-- Main Content -->
@@ -176,6 +174,16 @@
           <div><strong>Certification No:</strong> ab543s8</div>
           <div><strong>Starting Date:</strong> 05/Jul/2025</div>
           <div><strong>Award Date:</strong> 05/Aug/2025</div>
+        `;
+      }
+      else if(code === "ry1711s"){  
+        resultBox.innerHTML = `
+          <div><strong>Student Name:</strong> Ramesh Singh Yadav</div>
+          <div><strong>Domain:</strong> App Development Internship</div>
+          <div><strong>Duration:</strong> 4 weeks</div>
+          <div><strong>Certification No:</strong> ry1711s</div>
+          <div><strong>Starting Date:</strong> 01/Aug/2025</div>
+          <div><strong>Award Date:</strong> 30/Aug/2025</div>
         `;
       }
       else {
